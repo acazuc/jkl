@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME="glfw"
-VERSION="3.3.6"
+VERSION="3.3.8"
 
 TAR="$NAME-$VERSION.zip"
 SRCDIR="$NAME-$VERSION"

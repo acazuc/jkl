@@ -19,6 +19,23 @@ sl_extract()
 
 sl_build()
 {
+	case $TARGET in
+		"linux_32")
+			SYSTEM_NAME="Linux"
+			;;
+		"linux_64")
+			SYSTEM_NAME="Linux"
+			;;
+		"windows_32")
+			SYSTEM_NAME="Windows"
+			;;
+		"windows_64")
+			SYSTEM_NAME="Windows"
+			;;
+		"host")
+			SYSTEM_NAME=""
+			;;
+	esac
 	case $MODE in
 		"static")
 			BUILD_SHARED_LIBS="no"
@@ -28,7 +45,7 @@ sl_build()
 			;;
 	esac
 	cd "$SRCDIR" && \
-	cmake -DBUILD_SHARED_LIBS=$BUILD_SHARED_LIBS -DCMAKE_C_FLAGS="$CFLAGS $ARCH" -DJANSSON_WITHOUT_TESTS=ON -DJANSSON_EXAMPLES=OFF -DJANSSON_BUILD_DOCS=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR" . && \
+	cmake -DBUILD_SHARED_LIBS=$BUILD_SHARED_LIBS -DCMAKE_C_FLAGS="$CFLAGS $ARCH" -DCMAKE_SYSTEM_NAME=$SYSTEM_NAME -DCMAKE_C_COMPILER="$HOST-gcc" -DCMAKE_CXX_COMPILER="$HOST-g++" -DJANSSON_WITHOUT_TESTS=ON -DJANSSON_EXAMPLES=OFF -DJANSSON_BUILD_DOCS=OFF -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX="$INSTALL_DIR" . && \
 	make clean && \
 	make -j "$JOBS" && \
 	make install -j "$JOBS" && \

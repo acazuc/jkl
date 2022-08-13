@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME="libxml2"
-VERSION="2.9.9"
+VERSION="2.9.14"
 
 TAR="$NAME-v$VERSION.tar.gz"
 SRCDIR="$NAME-v$VERSION"

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME="openssl"
-VERSION="1.1.1n"
+VERSION="1.1.1q"
 
 TAR="$NAME-$VERSION.tar.gz"
 SRCDIR="$NAME-$VERSION"

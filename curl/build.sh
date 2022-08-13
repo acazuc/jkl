@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME="curl"
-VERSION="7.81.0"
+VERSION="7.84.0"
 
 TAR="$NAME-$VERSION.tar.xz"
 SRCDIR="$NAME-$VERSION"
@@ -46,7 +46,7 @@ sl_build()
 	             --disable-pop3 --disable-imap --disable-smtp --enable-ftp \
 	             --disable-rtsp --disable-gopher --disable-dict --disable-smb \
 	             --disable-ldap --enable-ipv6 --disable-threaded-resolver \
-	             --disable-pthreads $SSL \
+	             --disable-pthreads $SSL --without-brotli --without-zstd --with-zlib \
 	             --without-libpsl --without-librtmp --without-winidn --without-libidn2 \
 	             --with-nghttp2 --with-nghttp3 --without-zsh-functions \
 	             --enable-static=$ENABLE_STATIC --enable-shared=$ENABLE_SHARED \

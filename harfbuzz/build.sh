@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME="harfbuzz"
-VERSION="4.2.0"
+VERSION="4.4.1"
 
 TAR="$NAME-$VERSION.tar.xz"
 SRCDIR="harfbuzz-$VERSION"

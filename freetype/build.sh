@@ -1,7 +1,7 @@
 #!/bin/sh
 
 NAME="freetype"
-VERSION="2.12.0"
+VERSION="2.12.1"
 
 TAR="$NAME-$VERSION.tar.xz"
 SRCDIR="freetype-$VERSION"
