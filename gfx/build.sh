@@ -19,10 +19,10 @@ sl_build()
 {
 	case $TARGET in
 		"linux_32")
-			OPT="--enable-device-gl3 --enable-device-gl4 --enable-window-x11 --enable-window-glfw"
+			OPT="--enable-device-gl3 --enable-device-gl4 --enable-device-vk --enable-window-x11 --enable-window-glfw"
 			;;
 		"linux_64")
-			OPT="--enable-device-gl3 --enable-device-gl4 --enable-window-x11 --enable-window-glfw"
+			OPT="--enable-device-gl3 --enable-device-gl4 --enable-device-vk --enable-window-x11 --enable-window-glfw"
 			;;
 		"windows_32")
 			OPT="--enable-device-gl3 --enable-device-gl4 --enable-device-d3d11 --enable-window-win32 --enable-window-glfw"
@@ -31,10 +31,10 @@ sl_build()
 			OPT="--enable-device-gl3 --enable-device-gl4 --enable-device-d3d11 --enable-window-win32 --enable-window-glfw"
 			;;
 		"host")
-			OPT="--enable-device-gl3 --enable-device-gl4 --enable-window-x11 --enable-window-glfw"
+			OPT="--enable-device-gl3 --enable-device-gl4 --enable-device-vk --enable-window-x11 --enable-window-glfw"
 			;;
 	esac
-	pwd=$PWD
+	pwd="$PWD"
 	cd "$SRCDIR" && \
 	sh autogen.sh && \
 	sh configure CFLAGS="$CFLAGS $ARCH" CPPFLAGS="-I$INSTALL_DIR/include" LDFLAGS="-L$INSTALL_DIR/lib" --enable-static="$ENABLE_STATIC" --enable-shared="$ENABLE_SHARED" --host=$HOST --prefix="$INSTALL_DIR" --exec-prefix="$INSTALL_DIR" $OPT && \

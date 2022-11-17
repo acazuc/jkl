@@ -18,7 +18,7 @@ sl_build()
 {
 	cd "$SRCDIR" && \
 	make clean && \
-	make CXX="$HOST-g++" CXXFLAGS="$ARCH -fno-rtti" AR="$HOST-ar" RANLIB="$HOST-ranlib" -j "$JOBS" INCLUDES="-I $INSTALL_DIR/include" && \
+	make CXX="$HOST-g++" CXXFLAGS="$ARCH $CFLAGS" AR="$HOST-ar" RANLIB="$HOST-ranlib" -j "$JOBS" INCLUDES="-I $INSTALL_DIR/include" && \
 	mkdir -p "$INSTALL_DIR/include/libaudio" && \
 	cp -R src/* "$INSTALL_DIR/include/libaudio" && \
 	cp "libaudio.a" "$INSTALL_DIR/lib" && \

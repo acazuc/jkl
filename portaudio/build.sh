@@ -13,7 +13,7 @@ sl_download()
 
 sl_extract()
 {
-	tar -xf "$TAR"
+	tar xf "$TAR"
 	mv "portaudio" "$SRCDIR"
 	ln -sf "$SRCDIR" "$NAME"
 }

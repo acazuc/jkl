@@ -18,7 +18,7 @@ sl_build()
 {
 	cd "$SRCDIR" && \
 	make clean && \
-	make CXX="$HOST-g++" CXXFLAGS="$ARCH -fno-rtti" AR="$HOST-ar" RANLIB="$HOST-ranlib" -j $JOBS && \
+	make CXX="$HOST-g++" CXXFLAGS="$ARCH $CFLAGS" AR="$HOST-ar" RANLIB="$HOST-ranlib" -j $JOBS && \
 	mkdir -p "$INSTALL_DIR/include/libnet" && \
 	cp -R src/* "$INSTALL_DIR/include/libnet" && \
 	cp "libnet.a" "$INSTALL_DIR/lib" && \

@@ -18,7 +18,7 @@ sl_build()
 {
 	cd "$SRCDIR" && \
 	make clean && \
-	make CXX="$HOST-g++" CXXFLAGS="$ARCH -fno-rtti" AR="$HOST-ar" RANLIB="$HOST-ranlib" -j $JOBS && \
+	make CXX="$HOST-g++" CXXFLAGS="$ARCH $CFLAGS" AR="$HOST-ar" RANLIB="$HOST-ranlib" -j $JOBS && \
 	mkdir -p "$INSTALL_DIR/include/libhttp" && \
 	cp -R src/* "$INSTALL_DIR/include/libhttp" && \
 	cp "libhttp.a" "$INSTALL_DIR/lib" && \
